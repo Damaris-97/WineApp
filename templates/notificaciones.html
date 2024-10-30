@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Vino</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='turismo.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>App de Vino</h1>
+        <form action="{{ url_for('send_notification') }}" method="POST">
+            <label for="event">Evento:</label>
+            <input type="text" id="event" name="event" required>
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Enviar Notificación</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
