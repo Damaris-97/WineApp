@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sommelier de Vinos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='turismo.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sommelier de Vinos</h1>
+        <div id="wine-details">
+            <h2 id="wine-name"></h2>
+            <p>Tipo: <span id="wine-type"></span></p>
+            <p>Precio: <span id="wine-price"></span> $ </p>
+            <p>Descripción: <span id="wine-description"></span></p>
+        </div>
+        <h3>Opiniones</h3>
+        <ul id="opiniones-list"></ul>
+        <form id="opinionForm">
+            <input type="text" id="usuario" placeholder="Tu nombre" required>
+            <textarea id="comentario" placeholder="Tu opinión" required></textarea>
+            <button type="submit">Enviar Opinión</button>
+        </form>
+    </div>
+    <script src="sommelier.js"></script>
+</body>
+</html>
